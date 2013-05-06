@@ -1,3 +1,4 @@
+package controller;
 public class Operator {
 
 	int identification;	// Operatør id (1-99999999)

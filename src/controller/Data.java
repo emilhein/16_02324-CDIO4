@@ -1,4 +1,5 @@
-﻿package Controller;
+﻿package controller;
+
 import java.util.ArrayList;
 public class Data {
 

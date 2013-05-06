@@ -1,4 +1,4 @@
-﻿<jsp:useBean id="s" class="Session" scope="session" />
+﻿<jsp:useBean id="s" class="controller.Session" scope="session" />
 <jsp:setProperty name="session" property="*" />
 <!DOCTYPE html>
 <html>
