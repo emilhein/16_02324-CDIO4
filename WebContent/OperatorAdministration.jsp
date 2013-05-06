@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Operatøradministration</title>
+		<title>OperatÃ¸radministration</title>
 	</head>
 	<body>
-		<h1>Operatører</h1>
+		<h1>OperatÃ¸rer</h1>
 		<table>
 			<tr>
 				<th>Identifikation</th>
@@ -39,7 +39,7 @@
 					<td><input type="text" name="Initials"></td>
 					<td><input type="text" name="CPR"></td>
 					<td><input type="text" name="Password"></td>
-					<td><input type="submit" value="Tilføj"></td>
+					<td><input type="submit" value="TilfÃ¸j"></td>
 					<td></td>
 				</tr>
 			</form>
