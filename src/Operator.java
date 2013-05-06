@@ -1,59 +1,59 @@
 
 public class Operator {
-	// Operat¿r id i omrŒdet 1-99999999. v¾lges af brugeren 
+	// Operatï¿½r id i omrï¿½det 1-99999999. vï¿½lges af brugeren 
 
-	int oprId;
-	// Operat¿r nvan min.2 max.20 karakterer
-	String oprNavn;
-	// Operat¿ren initialer min 2 max. 3 karakterer
-	String  ini;
-	// Operat¿r cpr-nr 10 karakterer
-	String cpr;
-	// operat¿r password min. 7 max. 8 karakterer 
-	String password;
+	int Identification;
+	// Operatï¿½r nvan min.2 max.20 karakterer
+	String Name;
+	// Operatï¿½ren initialer min 2 max. 3 karakterer
+	String  Initials;
+	// Operatï¿½r cpr-nr 10 karakterer
+	String CPR;
+	// operatï¿½r password min. 7 max. 8 karakterer 
+	String Password;
 
 	public Operator ( int oprId, String oprNavn, String ini, String cpr, String password){
 		super();
-		this.oprId = oprId;
-		this.oprNavn = oprNavn;
-		this.ini = ini;
-		this.cpr = cpr;
-		this.password = password;
+		this.Identification = oprId;
+		this.Name = oprNavn;
+		this.Initials = ini;
+		this.CPR = cpr;
+		this.Password = password;
 
 	}
-	public int getoprId(){
-		return oprId;
+	public int getIdentification(){
+		return Identification;
 
 	}
-	public void setoprId(int oprId){
-		this.oprId=oprId;
+	public void setIdentification(int oprId){
+		this.Identification=oprId;
 
 	}
-	public String getOprNavn(){
-		return oprNavn;
+	public String getNavn(){
+		return Name;
 
 	}
-	public void setOprNavn ( String oprNavn){
-		this.oprNavn= oprNavn;
+	public void setNavn ( String oprNavn){
+		this.Name= oprNavn;
 	}
-	public String getIni(){
-		return ini;
+	public String getInitials(){
+		return Initials;
 	}
-	public void setIni( String ini){
-		this.ini = ini;
+	public void setInitials( String ini){
+		this.Initials = ini;
 	}
-	public String getcpr(){
-		return cpr;
+	public String getCPR(){
+		return CPR;
 	}
-	public void setCpr (String cpr ){
-		this.cpr = cpr;
+	public void setCPR (String cpr ){
+		this.CPR = cpr;
 
 	}
 	public String getPassword (){
-		return password;
+		return Password;
 	}
 	public void setPasswod( String password){
-		this.password = password;
+		this.Password = password;
 
 	}
 }
