@@ -17,15 +17,16 @@
 				<th></th>
 				<th></th>
 			</tr>
-			<% for (int i = 0; i < s.getOperators().length; i++) { %>
+			<% Operator[] operators = s.getOperators(); %>
+			<% for (int i = 0; i < operators.length; i++) { %>
 			<form method="post" style="display:inline">
 				<input type="hidden" value="<%= i %>" name="Index">
 				<tr>
-					<td><input type="text" value="<%= s.getOperators()[i].getIdentification() %>" name="Identification"></td>
-					<td><input type="text" value="<%= Operator.getName() %>" name="Name"></td>
-					<td><input type="text" value="<%= Operator.getInitials() %>" name="Initials"></td>
-					<td><input type="text" value="<%= Operator.getCPR() %>" name="CPR"></td>
-					<td><input type="text" value="<%= Operator.getPassword() %>" name="Password"></td>
+					<td><input type="text" value="<%= operators[i].getIdentification() %>" name="Identification"></td>
+					<td><input type="text" value="<%= operators[i].getName() %>" name="Name"></td>
+					<td><input type="text" value="<%= operators[i].getInitials() %>" name="Initials"></td>
+					<td><input type="text" value="<%= operators[i].getCPR() %>" name="CPR"></td>
+					<td><input type="text" value="<%= operators[i].getPassword() %>" name="Password"></td>
 					<td><input type="submit" value="Opdater"></td>
 					<td><input type="submit" value="Fjern"></td>
 				</tr>
