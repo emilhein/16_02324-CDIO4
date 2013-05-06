@@ -1,5 +1,5 @@
 ﻿<jsp:useBean id="s" class="controller.Session" scope="session" />
-<jsp:setProperty name="session" property="*" />
+<jsp:setProperty name="s" property="*" />
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,8 +17,8 @@
 				<th></th>
 				<th></th>
 			</tr>
-			<% Operator[] operators = s.getOperators(); %>
-			<% for (int i = 0; i < operators.length; i++) { %>
+			<%  controller.Operator[] operators = s.getOperators(); 
+			 for (int i = 0; i < operators.length; i++) { %>
 			<form method="post" style="display:inline">
 				<input type="hidden" value="<%= i %>" name="Index">
 				<tr>
