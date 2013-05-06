@@ -22,7 +22,7 @@
 				<input type="hidden" value="<%= i %>" name="Index">
 				<tr>
 					<td><input type="text" value="<%= Operator.getIdentification() %>" name="Identification"></td>
-					<td><input type="text" value="<%= Operator.getName %>" name="Name"></td>
+					<td><input type="text" value="<%= Operator.getName() %>" name="Name"></td>
 					<td><input type="text" value="<%= Operator.getInitials() %>" name="Initials"></td>
 					<td><input type="text" value="<%= Operator.getCPR() %>" name="CPR"></td>
 					<td><input type="text" value="<%= Operator.getPassword() %>" name="Password"></td>
