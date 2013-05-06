@@ -29,11 +29,11 @@ public class Operator {
 		this.Identification=oprId;
 
 	}
-	public String getNavn(){
+	public String getName(){
 		return Name;
 
 	}
-	public void setNavn ( String oprNavn){
+	public void setName ( String oprNavn){
 		this.Name= oprNavn;
 	}
 	public String getInitials(){
