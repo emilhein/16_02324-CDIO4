@@ -1,4 +1,5 @@
-﻿import java.util.ArrayList;
+﻿package Controller;
+import java.util.ArrayList;
 public class Data {
 
 	private ArrayList<Operator> operators = new ArrayList<Operator>();
