@@ -17,9 +17,9 @@
 				<th></th>
 				<th></th>
 			</tr>
-			<% for (Operator operator : session.getOperators()) { %>
+			<% for (int i = 0; i < session.getOperators().length; i++) { %>
 			<form method="post" style="display:inline">
-				<input type="hidden" value="<%= operator.getNumber() %>" name="Number">
+				<input type="hidden" value="<%= i %>" name="Index">
 				<tr>
 					<td><input type="text" value="<%= operator.getIdentification() %>" name="Identification"></td>
 					<td><input type="text" value="<%= operator.getName() %>" name="Name"></td>
@@ -32,7 +32,7 @@
 			</form>
 			<% } %>
 			<form method="post" style="display:inline">
-				<input type="hidden" name="Number">
+				<input type="hidden" value="-1" name="Index">
 				<tr>
 					<td><input type="text" name="Identification"></td>
 					<td><input type="text" name="Name"></td>
