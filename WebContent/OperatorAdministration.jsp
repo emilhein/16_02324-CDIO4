@@ -30,9 +30,9 @@
 					<td><input type="submit" value="Opdater"></td>
 					<td><input type="submit" value="Fjern"></td>
 				</tr>
-			</form>
+			</form> 
 			<% } %>
-			<form method="post" style="display:inline">
+			<form action="Controller.jsp" method="post" style="display:inline">
 				<input type="hidden" value="-1" name="Index">
 				<tr>
 					<td><input type="text" name="Identification"></td>

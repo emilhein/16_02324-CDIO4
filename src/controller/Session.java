@@ -9,5 +9,9 @@ public class Session {
 	public Operator[] getOperators() {
 		return operators;
 	}
+	public void addOperator(Operator operator) { 
+		data.addOperator(operator);
+		
+	}
 
 }
