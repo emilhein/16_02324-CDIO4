@@ -13,27 +13,27 @@
 		String initials = request.getParameter("Initials");
 		String cpr = request.getParameter("CPR");
 		String password = request.getParameter("Password");
-		if (identification.equals("")) {
+		if (!name.matches("^[0-9]{1,99999999}$")) {
 	%>
 	<p>Identifikation er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (name.equals("")) {
+		} else if (!name.matches("^[a-z]{2,20}$")) {
 	%>
 	<p>Navn er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (initials.equals("")) {
+		} else if (!name.matches("^[a-z]{2,3}$")) {
 	%>
 	<p>Initialer er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (cpr.equals("")) {
+		} else if (!name.matches("^[0-9]{10}$")) {
 	%>
 	<p>CPR er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (password.equals("")) {
+		} else if (!name.matches("^[a-z0-9]{7,8}$")) {
 	%>
 	<p>Adgangskoden er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
