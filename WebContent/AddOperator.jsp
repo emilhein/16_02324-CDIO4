@@ -57,6 +57,6 @@
 	<%
 		}
 	%>
-		<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
+		<p><a href="javascript:history.go(-1)">Tilbage</a></p>
 	</body>
 </html>
