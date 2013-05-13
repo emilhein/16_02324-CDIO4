@@ -30,8 +30,8 @@
 					<td><input type="text" value="<%= operators[i].getInitials() %>" name="Initials"></td>
 					<td><input type="text" value="<%= operators[i].getCPR() %>" name="CPR"></td>
 					<td><input type="text" value="<%= operators[i].getPassword() %>" name="Password"></td>
-					<td><input type="submit" value="Opdater"></td>
-					<td><input type="submit" value="Fjern"></td>
+					<td><input type="submit" value="Opdater" name="button"></td>
+					<td><input type="submit" value="Fjern" name="button"></td>
 				</tr>
 			</form> 
 			<%

@@ -19,5 +19,8 @@ public class Session {
 		operators[index].setCPR(cpr);
 		operators[index].setPassword(password);
 	}
+	public void removeOperator(int index) {
+		data.removeOperator(operators[index]);
+	}
 
 }

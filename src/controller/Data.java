@@ -13,9 +13,12 @@ public class Data {
 	public Operator[] getOperators() {
 		return operators.toArray(new Operator[operators.size()]);
 	}
-	
+
 	public void addOperator(Operator operator) { 
 		operators.add(operator);	
+	}
+	public void removeOperator(Operator operator) { 
+		operators.remove(operator);	
 	}
 	
 }

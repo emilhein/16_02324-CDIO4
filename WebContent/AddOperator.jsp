@@ -45,7 +45,11 @@
 		}
 		if (errors.size() == 0) {
 			if (index >= 0) {
-				s.updateOperator(index, identification, name, initials, cpr, password);
+				if (request.getParameter("button").equals("Fjern")) {
+					s.removeOperator(index);
+				} else {
+					s.updateOperator(index, identification, name, initials, cpr, password);
+				}
 			} else {
 				s.addOperator(identification, name, initials, cpr, password);
 			}
