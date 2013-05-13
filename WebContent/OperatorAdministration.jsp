@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Operat�radministration</title>
+		<meta charset="utf-8">
+		<title>Operatøradministration</title>
 	</head>
 	<body>
-		<h1>Operat�rer</h1>
+		<h1>Operatører</h1>
 		<table>
 			<tr>
 				<th>Identifikation</th>
@@ -17,8 +18,10 @@
 				<th></th>
 				<th></th>
 			</tr>
-			<%  controller.Operator[] operators = s.getOperators(); 
-			 for (int i = 0; i < operators.length; i++) { %>
+			<%
+				controller.Operator[] operators = s.getOperators();
+				for (int i = 0; i < operators.length; i++) {
+			%>
 			<form method="post" style="display:inline">
 				<input type="hidden" value="<%= i %>" name="Index">
 				<tr>
@@ -31,16 +34,17 @@
 					<td><input type="submit" value="Fjern"></td>
 				</tr>
 			</form> 
-			<% } %>
-			<form action="Controller.jsp" method="post" style="display:inline">
-				<input type="hidden" value="-1" name="Index">
+			<%
+				}
+			%>
+			<form action="AddOperator.jsp" method="post" style="display:inline">
 				<tr>
 					<td><input type="text" name="Identification"></td>
 					<td><input type="text" name="Name"></td>
 					<td><input type="text" name="Initials"></td>
 					<td><input type="text" name="CPR"></td>
 					<td><input type="text" name="Password"></td>
-					<td><input type="submit" value="Tilf�j"></td>
+					<td><input type="submit" value="Tilføj"></td>
 					<td></td>
 				</tr>
 			</form>

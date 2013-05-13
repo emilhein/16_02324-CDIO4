@@ -1,5 +1,4 @@
 ﻿package controller;
-
 import java.util.ArrayList;
 public class Data {
 
@@ -14,8 +13,9 @@ public class Data {
 	public Operator[] getOperators() {
 		return operators.toArray(new Operator[operators.size()]);
 	}
+	
 	public void addOperator(Operator operator) { 
-		operators.add(operator);
-		
+		operators.add(operator);	
 	}
+	
 }
