@@ -8,47 +8,42 @@
 	</head>
 	<body>
 	<%
-		Integer index;
-		Integer identification = request.getParameter("Identification");
+		java.util.ArrayList<String> errors = new java.util.ArrayList<String>();
+		Integer index = null;
+		Integer identification = null;
+		try {
+			index = Integer.parseInt(request.getParameter("Index"));
+		} catch (Exception e) {
+			errors.add("Indeks er ikke et tal.");
+		}
+		try {
+			identification = Integer.parseInt(request.getParameter("Identification"));
+			if (identification < 1) {
+				errors.add("Identifikation er mindre end 1.");
+			}
+			if (identification > 99999999) {
+				errors.add("Identifikation er større end 99999999.");
+			}
+		} catch (Exception e) {
+			errors.add("Identifikation er ikke et tal.");
+		}
 		String name = request.getParameter("Name");
 		String initials = request.getParameter("Initials");
 		String cpr = request.getParameter("CPR");
 		String password = request.getParameter("Password");
-		try {
-			index = Integer.parseInt(request.getParameter("Index"));
-		} catch (Exception e) {
-	%>
-	<p>Indeks er ugyldig.</p>
-	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
-	<%
-			return;
+		if (!name.matches("^.{2,20}$")) {
+			errors.add("Navn er ugyldig.");
 		}
-		if (!identification.matches("^[0-9]{1,8}$")) { //# TODO: 0 er ikke tilladt!
-	%>
-	<p>Identifikation er ugyldig.</p>
-	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
-	<%
-		} else if (!name.matches("^.{2,20}$")) {
-	%>
-	<p>Navn er ugyldig.</p>
-	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
-	<%
-		} else if (!initials.matches("^.{2,3}$")) {
-	%>
-	<p>Initialer er ugyldig.</p>
-	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
-	<%
-		} else if (!cpr.matches("^[0-9]{10}$")) {
-	%>
-	<p>CPR er ugyldig.</p>
-	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
-	<%
-		} else if (!password.matches("^.{7,8}$")) {
-	%>
-	<p>Adgangskoden er ugyldig.</p>
-	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
-	<%
-		} else {
+		if (!initials.matches("^.{2,3}$")) {
+			errors.add("Initialer er ugyldig.");
+		}
+		if (!cpr.matches("^[0-9]{10}$")) {
+			errors.add("CPR er ugyldig.");
+		}
+		if (!password.matches("^.{7,8}$")) {
+			errors.add("Adgangskode er ugyldig.");
+		}
+		if (errors.size() == 0) {
 			if (index >= 0) {
 				s.updateOperator(index, identification, name, initials, cpr, password);
 			} else {
@@ -56,6 +51,12 @@
 			}
 			response.sendRedirect("OperatorAdministration.jsp");
 		}
+		for (String line : errors) {
 	%>
+		<p><%= line %></p>
+	<%
+		}
+	%>
+		<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	</body>
 </html>

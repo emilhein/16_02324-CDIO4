@@ -1,11 +1,11 @@
 package controller;
 public class Operator {
 
-	int identification;	// OperatÃ¸r id (1-99999999)
-	String name;		// OperatÃ¸r navn (2-20 karakterer)
-	String initials;	// OpertÃ¸r initialer (2-3 karakterer)
-	String cpr;			// OperatÃ¸r CPR (10 karakterer, kun tal)
-	String password;	// OperatÃ¸r adgangskode (7-8 karakterer)
+	int identification;	// Operatør id (1-99999999)
+	String name;		// Operatør navn (2-20 karakterer)
+	String initials;	// Operatør initialer (2-3 karakterer)
+	String cpr;			// Operatør CPR (10 karakterer, kun tal)
+	String password;	// Operatør adgangskode (7-8 karakterer)
 
 	public Operator (int identification, String name, String initials, String cpr, String password) {
 		this.identification = identification;
