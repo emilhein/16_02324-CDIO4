@@ -13,7 +13,8 @@
 		String initials = request.getParameter("Initials");
 		String cpr = request.getParameter("CPR");
 		String password = request.getParameter("Password");
-		if (!name.matches("^[0-9]{1,99999999}$")) {
+		
+		if (!identification.matches("^[0-9]{1,8}$")) {
 	%>
 	<p>Identifikation er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
@@ -23,17 +24,17 @@
 	<p>Navn er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (!name.matches("^[a-z]{2,3}$")) {
+		} else if (!initials.matches("^[a-z]{2,3}$")) {
 	%>
 	<p>Initialer er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (!name.matches("^[0-9]{10}$")) {
+		} else if (!cpr.matches("^[0-9]{10}$")) {
 	%>
 	<p>CPR er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (!name.matches("^[a-z0-9]{7,8}$")) {
+		} else if (!password.matches("^[a-z0-9]{7,8}$")) {
 	%>
 	<p>Adgangskoden er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
