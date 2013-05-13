@@ -42,7 +42,7 @@ public class Operator {
 	public String getPassword() {
 		return password;
 	}
-	public void setPasswod(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	

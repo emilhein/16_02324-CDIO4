@@ -8,23 +8,32 @@
 	</head>
 	<body>
 	<%
-		String identification = request.getParameter("Identification");
+		Integer index;
+		Integer identification = request.getParameter("Identification");
 		String name = request.getParameter("Name");
 		String initials = request.getParameter("Initials");
 		String cpr = request.getParameter("CPR");
 		String password = request.getParameter("Password");
-		
-		if (!identification.matches("^[0-9]{1,8}$")) {
+		try {
+			index = Integer.parseInt(request.getParameter("Index"));
+		} catch (Exception e) {
+	%>
+	<p>Indeks er ugyldig.</p>
+	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
+	<%
+			return;
+		}
+		if (!identification.matches("^[0-9]{1,8}$")) { //# TODO: 0 er ikke tilladt!
 	%>
 	<p>Identifikation er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (!name.matches("^[a-z]{2,20}$")) {
+		} else if (!name.matches("^.{2,20}$")) {
 	%>
 	<p>Navn er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (!initials.matches("^[a-z]{2,3}$")) {
+		} else if (!initials.matches("^.{2,3}$")) {
 	%>
 	<p>Initialer er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
@@ -34,14 +43,17 @@
 	<p>CPR er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
-		} else if (!password.matches("^[a-z0-9]{7,8}$")) {
+		} else if (!password.matches("^.{7,8}$")) {
 	%>
 	<p>Adgangskoden er ugyldig.</p>
 	<p><a href="OperatorAdministration.jsp">Tilbage</a></p>
 	<%
 		} else {
-			controller.Operator operator = new controller.Operator(Integer.parseInt(identification), name, initials, cpr, password);
-			s.addOperator(operator);
+			if (index >= 0) {
+				s.updateOperator(index, identification, name, initials, cpr, password);
+			} else {
+				s.addOperator(identification, name, initials, cpr, password);
+			}
 			response.sendRedirect("OperatorAdministration.jsp");
 		}
 	%>

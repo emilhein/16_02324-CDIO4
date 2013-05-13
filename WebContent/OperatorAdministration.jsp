@@ -38,6 +38,7 @@
 				}
 			%>
 			<form action="AddOperator.jsp" method="post" style="display:inline">
+				<input type="hidden" value="-1" name="Index">
 				<tr>
 					<td><input type="text" name="Identification"></td>
 					<td><input type="text" name="Name"></td>
