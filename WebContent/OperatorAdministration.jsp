@@ -22,7 +22,7 @@
 				controller.Operator[] operators = s.getOperators();
 				for (int i = 0; i < operators.length; i++) {
 			%>
-			<form method="post" style="display:inline">
+			<form action="AddOperator.jsp" method="post" style="display:inline">
 				<input type="hidden" value="<%= i %>" name="Index">
 				<tr>
 					<td><input type="text" value="<%= operators[i].getIdentification() %>" name="Identification"></td>
